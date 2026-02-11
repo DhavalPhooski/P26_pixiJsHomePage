@@ -1,0 +1,35 @@
+<div id="pixi-container"></div>
+
+<style>
+  /* Ensure the container takes full screen initially, 
+     though Pixi will resize the canvas automatically */
+#pixi-container {
+  width: 100vw;
+  height: 300vh;
+  margin: 0;
+  padding: 0;
+  /* Add this to allow the browser to handle scrolls */
+touch-action: pan-y !important;
+  
+  /* Ensure the canvas doesn't think it needs to capture the pointer */
+  pointer-events: none;
+}
+
+canvas {
+
+  display: block;
+  /* Crucial: prevents the canvas from intercepting touch for scrolling */
+  touch-action: pan-y; 
+  /* Fixes a common mobile bug where canvas is treated as an image */
+  pointer-events: none; 
+}
+</style>
+
+<script>
+  import { PixiApp } from '../scripts/App.js';
+  
+  // Initialize when DOM is ready
+  window.addEventListener('DOMContentLoaded', () => {
+      new PixiApp('pixi-container');
+  });
+</script>
