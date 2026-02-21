@@ -8,11 +8,11 @@ export class PeachCloudBack extends PIXI.Container {
         // 1. BASE (Static)
         // Coords: x=831, y=875, w=699, h=949
 const peachCloudBack = Resources.getSubTexture(
-  'spritesheet',
-  7975,
-  2746,
-  2025,
-  846
+  'bigThing',
+  0,
+  4090,
+  3066,
+  1125
 );
         this.peachCloudBackSprite = new PIXI.Sprite(peachCloudBack);
         

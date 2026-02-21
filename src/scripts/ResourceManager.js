@@ -9,6 +9,8 @@ class ResourceManager {
         // src: where the file is located
         this.manifest = [
             { alias: 'spritesheet', src: '/spritesheet.avif' },
+            { alias: 'bigThing', src: '/bigThingSheet.avif' },
+            { alias: 'bg', src: '/bg.avif' },
             // Add other images here in the future
             // { alias: 'clouds', src: '/clouds.png' } 
         ];

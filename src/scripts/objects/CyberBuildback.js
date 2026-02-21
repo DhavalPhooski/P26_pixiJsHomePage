@@ -1,20 +1,20 @@
 import * as PIXI from 'pixi.js';
 import { Resources } from '../ResourceManager';
 
-export class PeachCloudBack2 extends PIXI.Container {
+export class CyberBuildback extends PIXI.Container {
     constructor() {
         super();
 
         // 1. BASE (Static)
         // Coords: x=831, y=875, w=699, h=949
-const peachCloudBack2 = Resources.getSubTexture(
-  'bigThing',
-  0,
-  1268,
-  3066,
-  1150
+const cyberBuildback = Resources.getSubTexture(
+  'spritesheet',
+  3069,
+  1747,
+  1102,
+  918
 );
-        this.peachCloudBackSprite = new PIXI.Sprite(peachCloudBack2);
+        this.peachCloudBackSprite = new PIXI.Sprite(cyberBuildback);
         
         // Anchor at bottom-center (0.5, 1.0)
         this.peachCloudBackSprite.anchor.set(0.5, 0.5);
