@@ -330,15 +330,15 @@ export class PixiApp {
       if(this.cyberBuildfront){
             this.cyberBuildfront.y = (heroSectionH*3)-550;
       this.cyberBuildfront.baseX = this.logicalWidth*.65 ;
-      this.cyberBuildfront.scale.set(1);
+      this.cyberBuildfront.scale.set(.8);
       this.cyberBuildfront.zIndex = 4;
       if (this.cyberBuildfront.x === 0)
         this.cyberBuildfront.x = this.cyberBuildfront.baseX;
     }
           if(this.cyberBuildback){
             this.cyberBuildback.y = (heroSectionH*3)-550;
-      this.cyberBuildback.baseX = this.logicalWidth*.53 ;
-      this.cyberBuildback.scale.set(1.8);
+      this.cyberBuildback.baseX = this.logicalWidth*.6 ;
+      this.cyberBuildback.scale.set(1.4);
       this.cyberBuildback.zIndex = 4;
       if (this.cyberBuildback.x === 0)
         this.cyberBuildback.x = this.cyberBuildback.baseX;
