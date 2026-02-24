@@ -25,7 +25,7 @@ export class PixiApp {
   constructor(containerId) {
     // We save the ID to use it later
     this.containerId = containerId;
-    this.logicalWidth = 520;
+    this.logicalWidth = 120;
 
     // Start the async initialization
     this._init();
