@@ -31,31 +31,34 @@ export class PixiApp {
     this._init();
   }
 
-  async _init() {
-    const container = document.getElementById(this.containerId);
-    if (!container) {
-      console.error("Pixi Container not found!");
-      return;
-    }
+async _init() {
+    const container = document.getElementById(this.containerId);
+    if (!container) {
+      console.error("Pixi Container not found!");
+      return;
+    }
 
-    this.app = new PIXI.Application();
+    this.app = new PIXI.Application();
 
-    // 1. Initialize Pixi to match the container's dimensions (which we'll set to 300vh in CSS)
-    await this.app.init({
-      background: "#ffffff",
-      resizeTo: container, // Crucial: Resize to the tall div, not the window
-      antialias: true,
-      autoDensity: true,
-      resolution: window.devicePixelRatio || 1,
-    });
+    // Cap the resolution to save mobile memory
+    const dpr = window.devicePixelRatio || 1;
+    const safeResolution = Math.min(dpr, 1.5); // Experiment with 1 or 1.5
 
-    container.appendChild(this.app.canvas);
+    await this.app.init({
+      background: "#ffffff",
+      resizeTo: container, 
+      antialias: true,
+      autoDensity: true,
+      resolution: safeResolution, 
+    });
 
-    this.world = new PIXI.Container();
-    this.app.stage.addChild(this.world);
+    container.appendChild(this.app.canvas);
 
-    await this.loadGame();
-  }
+    this.world = new PIXI.Container();
+    this.app.stage.addChild(this.world);
+
+    await this.loadGame();
+  }
 
   async loadGame() {
     try {
